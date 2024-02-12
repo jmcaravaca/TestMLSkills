@@ -1,0 +1,6 @@
+/.local/
+/.settings/
+/.objects/
+/.tmh/
+**/*.log
+temp.txt
