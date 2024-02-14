@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1095,1418</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1095,1410</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>MailsRM_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -110,13 +110,13 @@
       <AssemblyReference>System.Private.Uri</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="MailsRM" sap:VirtualizedContainerService.HintSize="546,1353" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="MailsRM" sap:VirtualizedContainerService.HintSize="546,1345" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ForEachFileX DisplayName="For Each File in Folder" Filter="*.jpg" Folder="[in_InputPath]" sap:VirtualizedContainerService.HintSize="484,1242" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+    <ui:ForEachFileX DisplayName="For Each File in Folder" Filter="*.jpg" Folder="[in_InputPath]" sap:VirtualizedContainerService.HintSize="484,1234" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
       <ui:ForEachFileX.Body>
         <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
           <ActivityAction.Argument1>
@@ -125,7 +125,7 @@
           <ActivityAction.Argument2>
             <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
           </ActivityAction.Argument2>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,984" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,976" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="jsonResponse" />
               <Variable x:TypeArguments="njl:JObject" Name="JObject" />
@@ -135,21 +135,40 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uma:MLSkills ApiKey="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Name="{x:Null}" NumberOfRetries="{x:Null}" ResponseHeaders="{x:Null}" Result="{x:Null}" SkillURL="{x:Null}" StatusCode="{x:Null}" TimeOutMs="{x:Null}" Connection="Robot" DisplayName="MLSkill" ExternApiFileType="JSON" sap:VirtualizedContainerService.HintSize="388,411" sap2010:WorkflowViewState.IdRef="MLSkills_1" Item="[CurrentFile.FullName]" JsonResponse="[jsonResponse]" NextPageNum="2" RefreshList="False" TotalCount="3">
+            <uma:MLSkills ApiKey="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Name="{x:Null}" NumberOfRetries="{x:Null}" ResponseHeaders="{x:Null}" Result="{x:Null}" SkillURL="{x:Null}" StatusCode="{x:Null}" TimeOutMs="{x:Null}" Connection="Robot" DisplayName="MLSkill" ExternApiFileType="JSON" sap:VirtualizedContainerService.HintSize="388,411" sap2010:WorkflowViewState.IdRef="MLSkills_1" Item="[CurrentFile.FullName]" JsonResponse="[jsonResponse]" NextPageNum="2" RefreshList="False" TotalCount="5">
               <uma:MLSkills.MLSkillList>
-                <scg:List x:TypeArguments="um:MLSkill" Capacity="4">
+                <scg:List x:TypeArguments="um:MLSkill" Capacity="8">
                   <um:MLSkill AccessUri="https://ai-uipath-we-b.deskover.com/mlskills/cbc68b06-329a-4d1c-bed1-3e27212120be/12983f92-df00-4f95-ac3e-81100547e652/cluster-b/clasificadormailrm" AccountId="cbc68b06-329a-4d1c-bed1-3e27212120be" Description="Clasificador Mail RM" Id="f4fb5aac-c070-4f36-a5d2-ccc4ac890221" InputDescription="Input file with mail text" InputType="FILE" Name="ClasificadorMailRM" OutputDescription="Output prediction (json)" ProjectId="092e7502-2f0e-4059-bffd-db1f8b3425ca" TenantId="12983f92-df00-4f95-ac3e-81100547e652" />
-                  <um:MLSkill AccessUri="https://ai-uipath-we-b.deskover.com/mlskills/cbc68b06-329a-4d1c-bed1-3e27212120be/12983f92-df00-4f95-ac3e-81100547e652/cluster-b/segmentadorexamen" AccountId="cbc68b06-329a-4d1c-bed1-3e27212120be" Description="" Id="898d154e-2064-4887-bee8-cd077fdf712e" InputDescription="Archivo (imagen)" InputType="FILE" Name="SegmentadorExamen" OutputDescription="Json boundingbox+confidence" ProjectId="7d31538e-91ab-43b2-a2c9-33d9f3ee2851" TenantId="12983f92-df00-4f95-ac3e-81100547e652" />
                   <x:Reference>__ReferenceID0</x:Reference>
+                  <um:MLSkill AccessUri="https://ai-uipath-we-b.deskover.com/mlskills/cbc68b06-329a-4d1c-bed1-3e27212120be/12983f92-df00-4f95-ac3e-81100547e652/cluster-b/mistral-cpu" AccountId="cbc68b06-329a-4d1c-bed1-3e27212120be" Description="" Id="c3f7db04-f262-4b39-89ac-d03f32d4adf6" InputDescription="Plain Text: Predict with defaults.&#xA;&#xA;Json Input: Set settings or predict" InputType="JSON" Name="mistral_cpu" OutputDescription="" ProjectId="8d45abe3-a60c-41fe-9903-8d9d4d910e8e" TenantId="12983f92-df00-4f95-ac3e-81100547e652" />
+                  <um:MLSkill AccessUri="https://ai-uipath-we-b.deskover.com/mlskills/cbc68b06-329a-4d1c-bed1-3e27212120be/12983f92-df00-4f95-ac3e-81100547e652/cluster-b/mistral7b-gpu" AccountId="cbc68b06-329a-4d1c-bed1-3e27212120be" Description="" Id="e5944694-92e0-4d18-880c-744ea4ab23ef" InputDescription="Plain Text: Predict with defaults.&#xA;&#xA;Json Input: Set settings or predict" InputType="JSON" Name="Mistral7B_GPU" OutputDescription="" ProjectId="8d45abe3-a60c-41fe-9903-8d9d4d910e8e" TenantId="12983f92-df00-4f95-ac3e-81100547e652" />
+                  <um:MLSkill AccessUri="https://ai-uipath-we-b.deskover.com/mlskills/cbc68b06-329a-4d1c-bed1-3e27212120be/12983f92-df00-4f95-ac3e-81100547e652/cluster-b/oob-mailsrm" AccountId="cbc68b06-329a-4d1c-bed1-3e27212120be" Description="" Id="f28c73fc-bd16-4e76-913b-27efdd457849" InputDescription="Text that would be classified" InputType="JSON" Name="OOB_MailsRM" OutputDescription="A JSON with predicted class name, associated confidence on that class prediction (between 0-1) and ngrams in the input that affected the prediction (optional)" ProjectId="092e7502-2f0e-4059-bffd-db1f8b3425ca" TenantId="12983f92-df00-4f95-ac3e-81100547e652" />
                 </scg:List>
               </uma:MLSkills.MLSkillList>
               <uma:MLSkills.SelectedMLSkill>
-                <um:MLSkill x:Name="__ReferenceID0" AccessUri="https://ai-uipath-we-b.deskover.com/mlskills/cbc68b06-329a-4d1c-bed1-3e27212120be/12983f92-df00-4f95-ac3e-81100547e652/cluster-b/segmentadorexamen-gpu" AccountId="cbc68b06-329a-4d1c-bed1-3e27212120be" Description="" Id="7c3cfd9c-5e28-4483-9436-104c5e2ca149" InputDescription="Archivo (imagen)" InputType="FILE" Name="SegmentadorExamen_GPU" OutputDescription="Json boundingbox+confidence" ProjectId="7d31538e-91ab-43b2-a2c9-33d9f3ee2851" TenantId="12983f92-df00-4f95-ac3e-81100547e652" />
+                <um:MLSkill x:Name="__ReferenceID0" AccessUri="https://ai-uipath-we-b.deskover.com/mlskills/cbc68b06-329a-4d1c-bed1-3e27212120be/12983f92-df00-4f95-ac3e-81100547e652/cluster-b/examencompleto" AccountId="cbc68b06-329a-4d1c-bed1-3e27212120be" Description="" Id="3a67f819-26d4-4454-b8b9-dc306b6ecc2e" InputDescription="" InputType="FILE" Name="ExamenCompleto" OutputDescription="" ProjectId="7d31538e-91ab-43b2-a2c9-33d9f3ee2851" TenantId="12983f92-df00-4f95-ac3e-81100547e652" />
               </uma:MLSkills.SelectedMLSkill>
             </uma:MLSkills>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[CurrentFile.Name]" />
-            <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="388,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[JObject]" JsonString="[jsonResponse]" />
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[jsonResponse]" />
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,171" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="388,60" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[JObject]" JsonString="[jsonResponse]" />
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
           </Sequence>
         </ActivityAction>
       </ui:ForEachFileX.Body>
